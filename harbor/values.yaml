@@ -1,0 +1,68 @@
+expose:
+  # Set the way how to expose the service. Set the type as "ingress",
+  # "clusterIP", "nodePort" or "loadBalancer" and fill the information
+  # in the corresponding section
+  tls:
+    auto:
+      # The common name used to generate the certificate, it's necessary
+      # when the type isn't "ingress"
+      commonName: harbor.dbnt.shop
+
+# The external URL for Harbor core service. It is used to
+# 1) populate the docker/helm commands showed on portal
+# 2) populate the token service URL returned to docker/notary client
+#
+# Format: protocol://domain[:port]. Usually:
+# 1) if "expose.type" is "ingress", the "domain" should be
+# the value of "expose.ingress.hosts.core"
+# 2) if "expose.type" is "clusterIP", the "domain" should be
+# the value of "expose.clusterIP.name"
+# 3) if "expose.type" is "nodePort", the "domain" should be
+# the IP address of k8s node
+#
+# If Harbor is deployed behind the proxy, set it as the URL of proxy
+externalURL: https://harbor.dbnt.shop
+# use internal repository
+nginx:
+  image:
+    repository: harbor.clouddari.com/cicd/goharbor/nginx-photon
+portal:
+  image:
+    repository: harbor.clouddari.com/cicd/goharbor/harbor-portal
+core:
+  image:
+    repository: harbor.clouddari.com/cicd/goharbor/harbor-core
+jobservice:
+  image:
+    repository: harbor.clouddari.com/cicd/goharbor/harbor-jobservice
+registry:
+  registry:
+    image:
+      repository: harbor.clouddari.com/cicd/goharbor/registry-photon
+  controller:
+    image:
+      repository: harbor.clouddari.com/cicd/goharbor/harbor-registryctl
+chartmuseum:
+  image:
+    repository: harbor.clouddari.com/cicd/goharbor/chartmuseum-photon
+trivy:
+  image:
+    repository: harbor.clouddari.com/cicd/goharbor/trivy-adapter-photon
+notary:
+  server:
+    image:
+      repository: harbor.clouddari.com/cicd/goharbor/notary-server-photon
+  signer:
+    image:
+      repository: harbor.clouddari.com/cicd/goharbor/notary-signer-photon
+database:
+  internal:
+    image:
+      repository: harbor.clouddari.com/cicd/goharbor/harbor-db
+redis:
+  internal:
+    image:
+      repository: harbor.clouddari.com/cicd/goharbor/redis-photon
+exporter:
+  image:
+    repository: harbor.clouddari.com/cicd/goharbor/harbor-exporter
