@@ -25,44 +25,44 @@ externalURL: https://harbor.dbnt.shop
 # use internal repository
 nginx:
   image:
-    repository: harbor.clouddari.com/cicd/goharbor/nginx-photon:latest
+    repository: harbor.clouddari.com/cicd/goharbor/nginx-photon
 portal:
   image:
-    repository: harbor.clouddari.com/cicd/goharbor/harbor-portal:latest
+    repository: harbor.clouddari.com/cicd/goharbor/harbor-portal
 core:
   image:
-    repository: harbor.clouddari.com/cicd/goharbor/harbor-core:latest
+    repository: harbor.clouddari.com/cicd/goharbor/harbor-core
 jobservice:
   image:
-    repository: harbor.clouddari.com/cicd/goharbor/harbor-jobservice:latest
+    repository: harbor.clouddari.com/cicd/goharbor/harbor-jobservice
 registry:
   registry:
     image:
-      repository: harbor.clouddari.com/cicd/goharbor/registry-photon:latest
+      repository: harbor.clouddari.com/cicd/goharbor/registry-photon
   controller:
     image:
-      repository: harbor.clouddari.com/cicd/goharbor/harbor-registryctl:latest
+      repository: harbor.clouddari.com/cicd/goharbor/harbor-registryctl
 chartmuseum:
   image:
-    repository: harbor.clouddari.com/cicd/goharbor/chartmuseum-photon:latest
+    repository: harbor.clouddari.com/cicd/goharbor/chartmuseum-photon
 trivy:
   image:
-    repository: harbor.clouddari.com/cicd/goharbor/trivy-adapter-photon:latest
+    repository: harbor.clouddari.com/cicd/goharbor/trivy-adapter-photon
 notary:
   server:
     image:
-      repository: harbor.clouddari.com/cicd/goharbor/notary-server-photon:latest
+      repository: harbor.clouddari.com/cicd/goharbor/notary-server-photon
   signer:
     image:
-      repository: harbor.clouddari.com/cicd/goharbor/notary-signer-photon:latest
+      repository: harbor.clouddari.com/cicd/goharbor/notary-signer-photon
 database:
   internal:
     image:
-      repository: harbor.clouddari.com/cicd/goharbor/harbor-db:latest
+      repository: harbor.clouddari.com/cicd/goharbor/harbor-db
 redis:
   internal:
     image:
-      repository: harbor.clouddari.com/cicd/goharbor/redis-photon:latest
+      repository: harbor.clouddari.com/cicd/goharbor/redis-photon
 exporter:
   image:
-    repository: harbor.clouddari.com/cicd/goharbor/harbor-exporter:latest
+    repository: harbor.clouddari.com/cicd/goharbor/harbor-exporter
