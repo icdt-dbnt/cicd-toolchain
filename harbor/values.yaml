@@ -21,7 +21,7 @@ expose:
 # the IP address of k8s node
 #
 # If Harbor is deployed behind the proxy, set it as the URL of proxy
-externalURL: https://harbor.dbnt.shop
+externalURL: http://harbor.dbnt.shop
 # use internal repository
 nginx:
   image:
